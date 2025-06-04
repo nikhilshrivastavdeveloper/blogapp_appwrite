@@ -14,6 +14,7 @@ import AddPost from './pages/AddPost.jsx'
 import AllPost from './pages/AllPost.jsx'
 import EditPost from './pages/EditPost.jsx'
 import { ProtectedRoute } from './components/index.js'
+// https://blogapp-appwrite-gamma.vercel.app/ -> deploy url 
 
 const router = createBrowserRouter([
   {

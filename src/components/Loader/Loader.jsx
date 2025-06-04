@@ -4,7 +4,7 @@ function Loader(){
   return (
     <div className="h-screen bg-black  flex justify-around items-center flex-col overflow-hidden fixed z-50 top-0 w-[100%]">
       <RingLoader color="#36d7b7" size={175} />
-      <h1 className='text-[#36d7b7] text-[25px]'>Blog App</h1>
+      <h1 className='text-[#36d7b7] text-[25px]'>BigBlog</h1>
     </div>
   )
 }

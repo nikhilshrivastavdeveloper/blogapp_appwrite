@@ -50,7 +50,6 @@ class AuthService {
     async getCurrentUser() {
         try {
             const user = await this.account.get(); // return current information of logged-in user
-            console.log(user)
             return user
         } catch (err) {
             console.log(err.message) 

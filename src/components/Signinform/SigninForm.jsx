@@ -33,11 +33,6 @@ function SigninForm() {
             } 
             else {
                 toastInfo("User already exists, Please Login")
-                // console.log(session)
-                //  setTimeout(() => {
-                //     navigate("/")
-                // },2500)
-                // toastInfo(session)
             }
         } catch (err) {
             toastError(err.message)
@@ -72,7 +67,7 @@ function SigninForm() {
             <div className="mx-auto w-[90%] sm:max-w-lg bg-gray-200 rounded-xl p-10 border border-black/10">
                 <div className="mb-2 flex flex-col justify-center">
                     <div className="flex justify-center w-full">
-                        <Logo width="100%" />
+                        <Logo />
                     </div>
                     <h2 className="text-center text-2xl font-bold leading-tight">Sign in to your account</h2>
                     <p className="mt-2 text-center text-base text-black/60">
@@ -130,12 +125,12 @@ function SigninForm() {
                                 {...register("password", {
                                     required: "Password is required",
                                     maxLength: {
-                                        value: 10,
-                                        message: "password should be contain maximum 10 character"
+                                        value: 14,
+                                        message: "password should be contain maximum 14 character"
                                     },
                                     minLength: {
-                                        value: 6,
-                                        message: "password should be contain minimum 6 character"
+                                        value: 8,
+                                        message: "password should be contain minimum 8 character"
                                     },
                                     pattern: {
                                         value: /^[A-Za-z0-9$@_%&#]+$/,

@@ -13,6 +13,7 @@ import SingalPost from './pages/SingalPost.jsx'
 import AddPost from './pages/AddPost.jsx'
 import AllPost from './pages/AllPost.jsx'
 import EditPost from './pages/EditPost.jsx'
+import NotFound from './pages/404Page.jsx'
 import { ProtectedRoute } from './components/index.js'
 // https://blogapp-appwrite-gamma.vercel.app/ -> deploy url 
 
@@ -50,6 +51,10 @@ const router = createBrowserRouter([
         path: "/edit-post/:slug",
         element: <ProtectedRoute> <EditPost /> </ProtectedRoute>
       },
+      {
+        path: "*",
+        element: <NotFound />
+      }
     ]
   }
 ])

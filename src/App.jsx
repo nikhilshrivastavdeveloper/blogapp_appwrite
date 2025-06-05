@@ -26,14 +26,13 @@ function App() {
 
   // conditional rendering
   if (loading) {
-    // return <Loader />
-    return <div>Loading...</div>
+    return <Loader />
   }
 
   return (
     <>
       <Header />
-      <div className="min-h-[80vh]">
+      <div>
       <Outlet />
       </div>
       <Footer />

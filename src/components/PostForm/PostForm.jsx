@@ -19,8 +19,6 @@ function PostForm({ post }) {
     const navigate = useNavigate()
 
     const onsubmit = async (data) => {
-        console.log(errors)
-        console.log(data)
         if (post) {
             //run when user want to update post
             //slug treat as a id of post
@@ -44,7 +42,6 @@ function PostForm({ post }) {
 
             if (file) {
                 const fileId = file.$id;
-                console.log(fileId)
                 const dbPost = await databaseService.createPost({ ...data, featuredImage: fileId, userId: userData.$id });
 
                 if (dbPost) {

@@ -27,7 +27,6 @@ function SingalPost() {
         }
 
     }, [slug, navigate])
-    console.log(post)
 
     const deletePost = () => {
         databaseService.deletePost(post.$id).then((status) => {
@@ -38,15 +37,12 @@ function SingalPost() {
         })
     }
 
-    // console.log(post.featuredImage)
-
-    
     return post && (
         <div className="py-8">
             <Container>
                 <div className="w-full flex justify-center mb-4 relative border rounded-xl p-2">
                     <img
-                        src={databaseService.getFilePreview("6836e70c0014eb73683d").href}
+                        src={databaseService.getFilePreview(post.featuredImage)}
                         alt={post.title}
                         className="rounded-xl"
                     />

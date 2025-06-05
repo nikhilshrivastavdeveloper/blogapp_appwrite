@@ -14,13 +14,13 @@ function AllPost() {
     }, [])
 
     return (
-        <div className='w-full py-8'>
+        <div className='w-full py-5'>
             <Container>
-                <div className='flex flex-wrap'>
+                <div className='flex flex-wrap sm:gap-[10px]'>
                    {
                     allPost.length > 0 ? (
                         allPost.map((post) => (
-                            <div key={post.$id} className='p-2 w-1/4'>
+                            <div key={post.$id} className='w-1/2 sm:w-1/4 p-[2px] sm:p-[0px] '>
                                 <Postcard  {...post} />
                             </div>
                         ))

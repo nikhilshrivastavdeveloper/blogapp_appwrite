@@ -1,6 +1,6 @@
-function Button({children, type="", bgColor="bg-blue-600", textColor="text-white", className="", ...props}){
+function Button({children, type="", bgColor="bg-blue-600", className="", ...props}){
     return(
-        <button type={type} className={`${bgColor} ${textColor} ${className} cursor-pointer`} {...props}>{children}</button>
+        <button type={type} className={`${bgColor} ${className} cursor-pointer`} {...props}>{children}</button>
     )
 }
 

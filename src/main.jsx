@@ -37,7 +37,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/post/:slug",
-        element: <ProtectedRoute> <SingalPost /> </ProtectedRoute>
+        element: <SingalPost />
       },
       {
         path: "/add-post",
@@ -45,7 +45,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/all-posts",
-        element: <ProtectedRoute> <AllPost /> </ProtectedRoute>
+        element: <AllPost />
       },
       {
         path: "/edit-post/:slug",

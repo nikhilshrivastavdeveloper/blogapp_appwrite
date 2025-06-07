@@ -9,7 +9,7 @@ function Offcanvas({ status, setStatus, links, authStatus }) {
       <div className={`w-[60%] bg-gray-300 p-[20px] z-[9999] fixed top-0 ${status ? "right-0" : "right-[-60%]"} duration-300 h-screen`}>
 
         <div className="flex justify-end mb-[10px]">
-          <Button className="px-[10px] py-[5px] rounded-[5px]" onClick={() => setStatus(false)}>
+          <Button className="px-[10px] py-[5px] rounded-[5px] text-white" onClick={() => setStatus(false)}>
             <FontAwesomeIcon icon={faXmark} />
           </Button>
         </div>

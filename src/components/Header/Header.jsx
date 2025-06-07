@@ -16,6 +16,11 @@ function Header() {
             slug: "/",
             active: true
         },
+         {
+            name: "All Posts",
+            slug: "/all-posts",
+            active: true,
+        },
         {
             name: "Login",
             slug: "/login",
@@ -25,11 +30,6 @@ function Header() {
             name: "Signup",
             slug: "/signup",
             active: !authStatus // false -> true || true -> false
-        },
-        {
-            name: "All Posts",
-            slug: "/all-posts",
-            active: authStatus, // false || true
         },
         {
             name: "Add Post",

@@ -141,7 +141,7 @@ function SigninForm() {
 
                             {errors.password && <p className="text-red-600">{errors.password.message}</p>}
 
-                            <Button type="submit" className="w-full rounded-full p-[5px] hover:bg-blue-700">Create Account</Button>
+                            <Button type="submit" className="w-full rounded-full p-[5px] hover:bg-blue-700 text-white">Create Account</Button>
                         </div>
                     </form>
                 </div>

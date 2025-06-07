@@ -50,7 +50,7 @@ function Header() {
 
                     {/* hamburger icon is here */}
                     <div className="block sm:hidden">
-                        <Button className="px-[10px] py-[5px] rounded-[5px]" onClick={() => setToggleBtn(true)}>
+                        <Button className="px-[10px] py-[5px] rounded-[5px] text-white" onClick={() => setToggleBtn(true)}>
                             <FontAwesomeIcon icon={faBars} />
                         </Button>
                     </div>

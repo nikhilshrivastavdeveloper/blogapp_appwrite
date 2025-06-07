@@ -118,7 +118,7 @@ function LoginForm() {
                             />
                             {errors.password && <p className="text-red-600">{errors.password.message}</p>}
 
-                            <Button type="submit" className="w-full rounded-full p-[5px] hover:bg-blue-700">Login</Button>
+                            <Button type="submit" className="w-full rounded-full p-[5px] hover:bg-blue-700 text-white">Login</Button>
                         </div>
                     </form>
                 </div>

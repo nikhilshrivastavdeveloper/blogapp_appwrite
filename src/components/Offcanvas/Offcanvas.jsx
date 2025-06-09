@@ -6,7 +6,7 @@ import { LogoutBtn, Button } from "../index.js"
 function Offcanvas({ status, setStatus, links, authStatus }) {
   return (
     <>
-      <div className={`w-[60%] bg-gray-300 p-[20px] z-[9999] fixed top-0 ${status ? "right-0" : "right-[-60%]"} duration-300 h-screen`}>
+      <div className={`w-[60%] bg-gray-300/70 backdrop-blur-[5px] p-[20px] z-[9999] fixed top-0 ${status ? "right-0" : "right-[-60%]"} duration-300 h-screen`}>
 
         <div className="flex justify-end mb-[10px]">
           <Button className="px-[10px] py-[5px] rounded-[5px] text-white" onClick={() => setStatus(false)}>
@@ -16,8 +16,8 @@ function Offcanvas({ status, setStatus, links, authStatus }) {
 
         <hr />
 
-        <div>
-          <ul className="h-[200px] flex flex-col justify-between items-center mt-[15px]">
+        <div className="h-[90%]"> 
+          <ul className="h-full  flex flex-col justify-around items-center mt-[15px]">
             {
               links.map((item) => (
                 item.active &&

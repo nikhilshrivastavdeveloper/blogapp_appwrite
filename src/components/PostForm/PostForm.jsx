@@ -102,7 +102,7 @@ function PostForm({ post }) {
                     {...register("status", { required: true })}
                 />
 
-                <Button type="submit" bgColor={post ? "bg-green-500" : undefined} className="w-full text-white p-[5px] rounded-[5px] hover:bg-blue-700 duration-300 transition" >{post ? "Update" : "Submit"}*</Button>
+                <Button type="submit" bgColor={post ? "bg-green-500" : undefined} className="w-full text-white p-[5px] rounded-[5px] hover:bg-blue-700 duration-300 transition" >{post ? "Update" : "Submit"}</Button>
                 
             </div>
         </form>

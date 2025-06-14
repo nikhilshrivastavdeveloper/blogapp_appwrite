@@ -12,13 +12,13 @@ class DatabaseService {
         this.storage = new Storage(this.client)
     }
 
-    async createPost({ title, slug, content, featuredImage, status, userId }) {
+    async createPost({ slug, title, content, image, author, category, comments, date, userID }) {
         try {
             const promise = await this.databases.createDocument(
                 config.appWriteDatabaseID,
                 config.appWriteCollectionID,
                 slug,
-                { title, content, featuredImage, status, userId }
+                { title, content, image, author, category, userID, comments, date }
             );
 
             return promise

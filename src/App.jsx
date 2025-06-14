@@ -9,8 +9,6 @@ function App() {
   const [loading, setLoading] = useState(true)
   const dispatch = useDispatch()
 
-  console.log("re-render", Date.now())
-
   useEffect(() => {
     authService.getCurrentUser()
       .then((userData) => {

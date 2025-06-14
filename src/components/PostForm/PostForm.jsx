@@ -1,13 +1,14 @@
 import { useForm } from "react-hook-form"
 import databaseService from "../../appwrite/database.js"
 import { useSelector } from "react-redux"
-import { InputBox, Select, RTE, Button, RadioBox } from "../index.js";
-import { useEffect, useCallback } from "react";
+import { InputBox, Select, RTE, Button, RadioBox, Loader } from "../index.js";
+import { useEffect, useCallback, useState } from "react";
 import DOMPurify from 'dompurify';
 import { toastSuccess } from "../toastify.js";
 import { ToastContainer, Bounce } from 'react-toastify';
 
 function PostForm({ post }) {
+    const [loader, setLoader] = useState(false)
     const { register, handleSubmit, watch, setValue, getValues, control, formState: { errors }, reset } = useForm({
         defaultValues: {
             title: post?.title || "",
@@ -20,6 +21,7 @@ function PostForm({ post }) {
     const date = new Date().toLocaleDateString('IN-hi') // current date
 
     const onsubmit = async (data) => {
+        setLoader(true)
         //slug treat as a id of post             
         data = { ...data, content: DOMPurify.sanitize(data.content) } // second layer of protection to prevent xss
 
@@ -55,6 +57,7 @@ function PostForm({ post }) {
             console.log(err)
         } finally {
             reset()
+            setLoader(false)
         }
     }
 
@@ -90,9 +93,9 @@ function PostForm({ post }) {
         return () => subscription.unsubscribe()
     }, [watch])
 
-    // if (loader) {
-    //     return <Loader />
-    // }
+    if (loader) {
+        return <Loader />
+    }
 
     return (
         <form onSubmit={handleSubmit(onsubmit)} className="flex flex-col lg:flex-row gap-6 p-4 rounded-xl bg-white">
@@ -128,12 +131,11 @@ function PostForm({ post }) {
                 {errors.title && <p className="text-red-600 text-sm">{errors.title.message}</p>}
 
                 <InputBox
-                    {...register("slug", { required: "Please fill out this field" })}
-                    label="Slug :"
+                    {...register("slug")}
+                    label="Slug (Readonly) :"
                     placeholder="Slug"
-                    onInput={(e) => setValue("slug", slugTransform(e.target.value), { shouldValidate: true })}
+                    readOnly={true}
                 />
-                {errors.slug && <p className="text-red-600 text-sm">{errors.slug.message}</p>}
 
                 <Select
                     options={["Technology", "Sport", "Travel", "Food", "Health", "Finance", "Business", "Environment", "Motivation"]}

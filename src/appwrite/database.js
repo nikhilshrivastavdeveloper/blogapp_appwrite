@@ -67,12 +67,11 @@ class DatabaseService {
         }
     }
 
-    async getPosts(queries = [Query.equal("status", "active")]) {
+    async getPosts() {
         try {
             return await this.databases.listDocuments(
                 config.appWriteDatabaseID,
-                config.appWriteCollectionID,
-                queries
+                config.appWriteCollectionID
             )
         } catch (err) {
             console.log("Appwrite serive :: getPosts :: error", err);

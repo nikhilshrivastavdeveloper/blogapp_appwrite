@@ -15,6 +15,7 @@ import PostForm from "./PostForm/PostForm.jsx";
 import Loader from "./Loader/Loader.jsx";
 import Offcanvas from "./Offcanvas/Offcanvas.jsx";
 import { RadioBox } from "./Input/Input.jsx";
+import NoContent from "./NoContent/NoContent.jsx";
 
 export {
   Header, 
@@ -33,5 +34,6 @@ export {
   PostForm, 
   Loader,
   Offcanvas,
-  RadioBox
+  RadioBox,
+  NoContent
 }

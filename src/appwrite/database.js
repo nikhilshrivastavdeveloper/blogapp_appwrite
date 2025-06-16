@@ -1,5 +1,5 @@
 import config from "../conf/conf.js";
-import { Client, Databases, Storage, Query, ID } from "appwrite";
+import { Client, Databases, Storage, ID } from "appwrite";
 
 class DatabaseService {
 

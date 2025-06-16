@@ -5,14 +5,14 @@ import parse from "html-react-parser";
 import "./card.css"
 
 function Postcard({ $id, title, image, content, author, date, category }) {
-
+    console.log(image)
     return (
         <Link to={`/post/${$id}`}>
             <div className="w-full h-full rounded-xl overflow-hidden shadow-md bg-white hover:shadow-lg transition-all duration-300 border border-gray-300">
                 {/* Image Section */}
                 <div className="h-[200px] w-full">
                     <img
-                        src={image === "Not Available" ? "../../images/default_image.webp" : databaseService.getFilePreview(image)}
+                        src={image && image !== "Not Available" ? databaseService.getFilePreview(image) : "../../images/default_image.webp" }
                         alt={title}
                         className="w-full h-full object-cover"
                     />
